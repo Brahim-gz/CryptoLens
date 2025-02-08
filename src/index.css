@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #b892ff;
+  --color-secondary: #240046;
+  --color-Black: #35343c;
+  --color-Black-75: rgb(53, 52, 60, 0.75);
+  --color-Black-50: rgb(53, 52, 60, 0.5);
+  --color-Black-25: rgb(53, 52, 60, 0.25);
+  --color-Black-10: rgb(53, 52, 60, 0.1);
+  --color-White: #dcdcee;
+  --color-Red: #f21b3f;
+  --color-Green: #29bf12;
+
+  --font-nunito: "Nunito", "sans-serif";
+}
