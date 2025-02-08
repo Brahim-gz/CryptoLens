@@ -19,7 +19,7 @@ function List() {
   return (
     <main className="h-[74%] mx-[16%] flex flex-col gap-2 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {cryptos.map((c: currencie) => {
-        return <Crypto currencie={c} />;
+        return <Crypto currencie={c} key={c.id} />;
       })}
     </main>
   );
