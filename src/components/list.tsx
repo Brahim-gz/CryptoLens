@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getTopCryptocurrencies } from "../dataFetching";
 import Crypto from "./crypto";
-import { currencie } from "../Types";
+import { currency } from "../Types";
 
 function List() {
   const {
@@ -18,8 +18,8 @@ function List() {
 
   return (
     <main className="h-[74%] mx-[16%] flex flex-col gap-2 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      {cryptos.map((c: currencie) => {
-        return <Crypto currencie={c} key={c.id} />;
+      {cryptos.map((c: currency) => {
+        return <Crypto currency={c} key={c.id} />;
       })}
     </main>
   );

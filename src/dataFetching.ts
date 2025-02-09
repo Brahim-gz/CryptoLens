@@ -13,7 +13,7 @@ export function getTopCryptocurrencies() {
     .then((data) => data);
 }
 
-export function getCryptocurrencieDetails({
+export function getCryptocurrencyDetails({
   queryKey,
 }: {
   queryKey: [string, string];
