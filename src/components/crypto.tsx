@@ -6,11 +6,11 @@ function Crypto({ currency }: { currency: currency }) {
   return (
     <Link
       to={`/${currency.id}`}
-      className="bg-[radial-gradient(closest-side,_#40348D_50%,_#191533_100%)] rounded-2xl"
+      className="bg-[radial-gradient(closest-side,_#40348D_50%,_#191533_100%)] rounded-2xl dark:bg-none dark:bg-White"
     >
-      <div className="rounded-2xl text-White px-[3%] py-4 flex items-center justify-between transition duration-1000 ease-in-out hover:bg-[#40348D]">
+      <div className="rounded-2xl text-White px-[3%] py-4 flex items-center justify-between transition duration-1000 ease-in-out hover:bg-[#40348D] dark:text-Black-75 dark:hover:bg-[#C7C7D6]">
         <div className="flex items-center gap-5">
-          <p className="font-montserrat text-sm w-3">
+          <p className="font-montserrat text-sm w-3 dark:text-Black-50">
             {currency.market_cap_rank}
           </p>
           <img src={currency.image} alt="icon" width={64} />

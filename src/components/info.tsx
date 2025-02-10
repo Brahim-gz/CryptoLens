@@ -3,7 +3,7 @@ import { InfoProps } from "../Types";
 function Info({ c }: { c: InfoProps }) {
   return (
     <>
-      <div className="bg-White flex items-center justify-center w-38 rounded-br-3xl z-30 h-29">
+      <div className="bg-White flex items-center justify-center w-38 rounded-br-3xl z-30 h-29 dark:bg-secondary">
         <img src={c.image.large} alt="icon" width={100} />
       </div>
       <div className="rounded-3xl bg-primary row-span-2 col-span-2 row-start-3 col-start-2"></div>
@@ -51,7 +51,7 @@ function Info({ c }: { c: InfoProps }) {
       </p>
       <div className="rounded-3xl bg-primary row-span-10 col-start-5 row-start-6 z-3"></div>
       <div
-        className={`rounded-3xl bg-White row-span-8 col-start-5 row-start-7 z-5 w-6 mx-4.5`}
+        className={`rounded-3xl bg-White row-span-8 col-start-5 row-start-7 z-5 w-6 mx-4.5 dark:bg-secondary`}
       ></div>
     </>
   );

@@ -27,7 +27,7 @@ function Details() {
 
   return (
     <>
-      <main className="h-[91%] mx-16 my-8 grid grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary">
+      <main className="h-[91%] mx-16 my-8 grid grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary dark:text-White">
         <Info c={currency} />
         <CurrencyState c={currency.market_data} />
         <HLStats c={currency.market_data} />
