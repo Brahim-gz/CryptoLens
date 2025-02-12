@@ -6,35 +6,33 @@ function Crypto({ currency }: { currency: currency }) {
   return (
     <Link
       to={`/${currency.id}`}
-      className="bg-[radial-gradient(closest-side,_#40348D_50%,_#191533_100%)] rounded-2xl dark:bg-none dark:bg-White"
+      className="group border-secondary border-3 rounded-2xl px-[3%] py-4 flex items-center justify-between hover:px-[4%] dark:hover:bg-[#d0d0e1]  hover:border-5  text-Black-75 hover:text-Black dark:bg-White dark:border-none"
     >
-      <div className="rounded-2xl text-White px-[3%] py-4 flex items-center justify-between transition duration-1000 ease-in-out hover:bg-[#40348D] dark:text-Black-75 dark:hover:bg-[#C7C7D6]">
-        <div className="flex items-center gap-5">
-          <p className="font-montserrat text-sm w-3 dark:text-Black-50">
-            {currency.market_cap_rank}
-          </p>
-          <img src={currency.image} alt="icon" width={64} />
-          <h2 className="font-nunito font-bold text-2xl">{currency.name}</h2>
-        </div>
-        <div className="flex items-center gap-5">
-          <h3 className="font-nunito font-bold text-xl">
-            $ {currency.current_price}
-          </h3>
-          <h4
-            className={
-              currency.price_change_percentage_24h >= 0
-                ? "font-nunito font-bold text-xl text-Green"
-                : "font-nunito font-bold text-xl text-Red"
-            }
-          >
-            {currency.price_change_percentage_24h.toFixed(2)}
-          </h4>
-          {currency.price_change_percentage_24h >= 0 ? (
-            <FaChevronUp className="fill-Green" size={20} />
-          ) : (
-            <FaChevronDown className="fill-Red" size={20} />
-          )}
-        </div>
+      <div className="flex items-center gap-5">
+        <p className="font-montserrat text-sm w-3 text-Black-50 group-hover:text-Black-75">
+          {currency.market_cap_rank}
+        </p>
+        <img src={currency.image} alt="icon" width={64} />
+        <h2 className="font-nunito font-bold text-2xl">{currency.name}</h2>
+      </div>
+      <div className="flex items-center gap-5">
+        <h3 className="font-nunito font-bold text-xl">
+          $ {currency.current_price}
+        </h3>
+        <h4
+          className={
+            currency.price_change_percentage_24h >= 0
+              ? "font-nunito font-bold text-xl text-Green"
+              : "font-nunito font-bold text-xl text-Red"
+          }
+        >
+          {currency.price_change_percentage_24h.toFixed(2)}
+        </h4>
+        {currency.price_change_percentage_24h >= 0 ? (
+          <FaChevronUp className="fill-Green" size={20} />
+        ) : (
+          <FaChevronDown className="fill-Red" size={20} />
+        )}
       </div>
     </Link>
   );
