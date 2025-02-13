@@ -20,6 +20,9 @@ export type InfoProps = {
 export type CurrencyStateProps = {
   current_price: { [key: string]: number };
   price_change_percentage_24h: number;
+  price_change_percentage_7d: number;
+  price_change_percentage_30d: number;
+  price_change_percentage_1y: number;
   market_cap: { [key: string]: number };
   market_cap_rank: number;
 };
@@ -30,3 +33,68 @@ export type HLStatsProps = {
   high_24h: { [key: string]: number };
   low_24h: { [key: string]: number };
 };
+
+export const supported_currencies = [
+  "usd",
+  "btc",
+  "eth",
+  "ltc",
+  "bch",
+  "bnb",
+  "eos",
+  "xrp",
+  "xlm",
+  "link",
+  "dot",
+  "yfi",
+  "aed",
+  "ars",
+  "aud",
+  "bdt",
+  "bhd",
+  "bmd",
+  "brl",
+  "cad",
+  "chf",
+  "clp",
+  "cny",
+  "czk",
+  "dkk",
+  "eur",
+  "gbp",
+  "gel",
+  "hkd",
+  "huf",
+  "idr",
+  "ils",
+  "inr",
+  "jpy",
+  "krw",
+  "kwd",
+  "lkr",
+  "mmk",
+  "mxn",
+  "myr",
+  "ngn",
+  "nok",
+  "nzd",
+  "php",
+  "pkr",
+  "pln",
+  "rub",
+  "sar",
+  "sek",
+  "sgd",
+  "thb",
+  "try",
+  "twd",
+  "uah",
+  "vef",
+  "vnd",
+  "zar",
+  "xdr",
+  "xag",
+  "xau",
+  "bits",
+  "sats",
+];

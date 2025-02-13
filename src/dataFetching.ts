@@ -26,10 +26,10 @@ export function getCryptocurrencyDetails({
 export function getOHCLData({
   queryKey,
 }: {
-  queryKey: [string, string, string];
+  queryKey: [string, string, string, number, string];
 }) {
   return fetch(
-    `https://api.coingecko.com/api/v3/coins/${queryKey[1]}/ohlc?vs_currency=usd&days=1`,
+    `https://api.coingecko.com/api/v3/coins/${queryKey[1]}/ohlc?vs_currency=${queryKey[4]}&days=${queryKey[3]}`,
     options
   )
     .then((res) => res.json())
@@ -39,10 +39,10 @@ export function getOHCLData({
 export function getChartsData({
   queryKey,
 }: {
-  queryKey: [string, string, string];
+  queryKey: [string, string, string, number, string];
 }) {
   return fetch(
-    `https://api.coingecko.com/api/v3/coins/${queryKey[1]}/market_chart?vs_currency=usd&days=1`,
+    `https://api.coingecko.com/api/v3/coins/${queryKey[1]}/market_chart?vs_currency=${queryKey[4]}&days=${queryKey[3]}`,
     options
   )
     .then((res) => res.json())

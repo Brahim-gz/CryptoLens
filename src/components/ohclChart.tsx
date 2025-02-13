@@ -4,9 +4,17 @@ import { ApexOptions } from "apexcharts";
 import { getOHCLData } from "../dataFetching";
 import { useQuery } from "@tanstack/react-query";
 
-function OHCLChart({ id }: { id: string }) {
+function OHCLChart({
+  id,
+  duration,
+  selectedCurrency,
+}: {
+  id: string;
+  duration: number;
+  selectedCurrency: string;
+}) {
   const { status, error, data } = useQuery({
-    queryKey: ["cryptos", id, "OHCL"],
+    queryKey: ["cryptos", id, "OHCL", duration, selectedCurrency],
     queryFn: getOHCLData,
   });
 
