@@ -66,7 +66,7 @@ function PricesChart({ data }: { data: [number, number][] }) {
     },
   };
   return (
-    <div className="outline-1 outline-secondary rounded-3xl flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+    <div className="outline-1 outline-secondary rounded-3xl col-start-8 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
       <Texture />
       <ReactApexChart
         options={options}

@@ -34,12 +34,12 @@ function CurrencyState({
   }
   return (
     <>
-      <div className="outline-1 outline-secondary rounded-3xl col-span-6 row-span-2 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
+      <div className="outline-1 outline-secondary rounded-3xl col-span-6 row-span-2 row-start-1 col-start-17 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
         <Texture />
         {c.current_price[selectedCurrency]}
         <span className="font-montserrat font-light text-xl">Price</span>
       </div>
-      <div className="rounded-3xl bg-primary col-span-2 row-span-2">
+      <div className="rounded-3xl bg-primary col-start-23 row-start-1 col-span-2 row-span-2">
         <select
           value={selectedCurrency}
           onChange={(e) => setSelectedCurrency(e.target.value)}
@@ -61,7 +61,7 @@ function CurrencyState({
         />
       </div>
       <div
-        className={`rounded-3xl col-span-8 row-span-2 text-2xl text-White flex items-center justify-between px-5 ${
+        className={`rounded-3xl col-start-17 row-start-3 col-span-8 row-span-2 text-2xl text-White flex items-center justify-between px-5 ${
           price_change_percentage < 0 ? "bg-Red" : "bg-Green"
         }`}
       >
@@ -77,12 +77,12 @@ function CurrencyState({
           <MdOutlineKeyboardDoubleArrowUp size={30} />
         )}
       </div>
-      <div className="outline-1 outline-secondary rounded-3xl col-span-6 row-span-2 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
+      <div className="outline-1 outline-secondary rounded-3xl col-start-17 row-start-5 col-span-6 row-span-2 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
         <Texture />
         {c.market_cap[selectedCurrency]}
         <span className="font-montserrat font-light text-xl">Market cap</span>
       </div>
-      <div className="outline-1 outline-secondary rounded-3xl col-span-2 row-span-2 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
+      <div className="outline-1 outline-secondary rounded-3xl col-start-23 row-start-5 col-span-2 row-span-2 backdrop-blur-24 relative overflow-hidden text-2xl flex items-center justify-between px-5 dark:outline-White">
         <Texture />
         {c.market_cap_rank}
         <span className="font-montserrat font-light text-xl">Rank</span>

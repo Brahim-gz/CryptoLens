@@ -81,7 +81,7 @@ function VolumesChart({
   };
   return (
     <>
-      <div className="outline-1 outline-secondary flex items-center justify-center rounded-3xl col-span-7 row-span-7 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+      <div className="outline-1 outline-secondary flex items-center col-start-1 row-start-16 justify-center rounded-3xl col-span-7 row-span-7 backdrop-blur-24 relative overflow-hidden dark:outline-White">
         <Texture />
         <ReactApexChart
           options={options}

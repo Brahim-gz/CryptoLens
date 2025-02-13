@@ -61,7 +61,7 @@ function Details() {
           data={ChartsData.total_volumes}
           selectedCurrency={selectedCurrency}
         />
-        <div className="rounded-3xl bg-primary col-span-2 row-span-3 my-4">
+        <div className="rounded-3xl bg-primary col-start-8 row-start-16 col-span-2 row-span-3 my-4">
           <select
             value={duration}
             onChange={(e) => setDuration(parseInt(e.target.value))}

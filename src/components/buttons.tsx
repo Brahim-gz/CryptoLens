@@ -7,7 +7,7 @@ function Buttons({ link }: { link: string }) {
     <>
       <button
         onClick={() => window.open(link, "_blank")}
-        className="group cursor-pointer rounded-3xl bg-secondary col-span-5 row-span-3 text-White text-4xl flex items-center justify-center gap-4 dark:bg-White dark:text-Black-75"
+        className="group cursor-pointer rounded-3xl col-start-20 row-start-19 bg-secondary col-span-5 row-span-3 text-White text-4xl flex items-center justify-center gap-4 dark:bg-White dark:text-Black-75"
       >
         <span className="group-hover:-translate-x-50 group-hover:absolute group-hover:opacity-0 left-[85%] transition-all duration-500">
           More
@@ -19,7 +19,7 @@ function Buttons({ link }: { link: string }) {
       </button>
       <button
         onClick={() => navigate("/")}
-        className="group cursor-pointer rounded-3xl bg-primary col-span-5 row-span-3 text-White text-4xl flex items-center justify-center gap-4 dark:after:bg-secondary dark:after:w-15 dark:after:h-15 dark:after:z-14 dark:after:absolute dark:after:left-[97%]"
+        className="group cursor-pointer rounded-3xl bg-primary col-start-20 row-start-22 col-span-5 row-span-3 text-White text-4xl flex items-center justify-center gap-4 dark:after:bg-secondary dark:after:w-15 dark:after:h-15 dark:after:z-14 dark:after:absolute dark:after:left-[97%]"
       >
         <LuArrowLeft
           size={40}
