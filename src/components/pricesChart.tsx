@@ -1,8 +1,38 @@
 import { ApexOptions } from "apexcharts";
 import Texture from "./texture";
 import ReactApexChart from "react-apexcharts";
+import { MdErrorOutline } from "react-icons/md";
 
-function PricesChart({ data }: { data: [number, number][] }) {
+function PricesChart({
+  data,
+  status,
+  error,
+}: {
+  data: [number, number][];
+  status: string;
+  error: Error;
+}) {
+  if (status === "loading")
+    return (
+      <div className="outline-1 outline-secondary rounded-3xl col-start-8 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+        <Texture />
+        <span className="loading loading-ring text-primary w-12"></span>
+      </div>
+    );
+  if (status === "error") {
+    return (
+      <div className="outline-1 outline-secondary rounded-3xl col-start-8 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+        <Texture />
+        <div
+          className="tooltip tooltip-bottom text-Black-50 dark:text-White"
+          data-tip={error.message}
+        >
+          <MdErrorOutline size={40} className="fill-Red" />
+        </div>
+      </div>
+    );
+  }
+
   const series = [
     {
       name: "Prices Data",

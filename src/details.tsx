@@ -12,6 +12,7 @@ import PricesChart from "./components/pricesChart";
 import MarketCapsChart from "./components/marketCapsChart";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
+import ErrorPage from "./components/error";
 
 function Details() {
   const [duration, setDuration] = useState(1);
@@ -35,11 +36,14 @@ function Details() {
     queryFn: getChartsData,
   });
 
-  if (status === "loading") return <h1>Loading...</h1>;
-  if (status === "error") return <h1>{JSON.stringify(error)}</h1>;
+  if (status === "loading")
+    return (
+      <div className="flex justify-center items-center w-screen h-screen">
+        <span className="loading loading-spinner text-primary w-15"></span>
+      </div>
+    );
+  if (status === "error") return <ErrorPage error={error as Error} />;
 
-  if (ChartsStatus === "loading") return <h1>Loading...</h1>;
-  if (ChartsStatus === "error") return <h1>{JSON.stringify(ChartsError)}</h1>;
   return (
     <>
       <main className="h-[91%] mx-16 my-8 grid grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary dark:text-White">
@@ -58,8 +62,10 @@ function Details() {
         />
         <VolumesChart
           total_volume={currency.market_data.total_volume}
-          data={ChartsData.total_volumes}
+          data={ChartsData?.total_volumes}
           selectedCurrency={selectedCurrency}
+          status={ChartsStatus}
+          error={ChartsError as Error}
         />
         <div className="rounded-3xl bg-primary col-start-8 row-start-16 col-span-2 row-span-3 my-4">
           <select
@@ -97,8 +103,16 @@ function Details() {
             className="relative left-24 bottom-10 pointer-events-none fill-White"
           />
         </div>
-        <PricesChart data={ChartsData.prices} />
-        <MarketCapsChart data={ChartsData.market_caps} />
+        <PricesChart
+          data={ChartsData?.prices}
+          status={ChartsStatus}
+          error={ChartsError as Error}
+        />
+        <MarketCapsChart
+          data={ChartsData?.market_caps}
+          status={ChartsStatus}
+          error={ChartsError as Error}
+        />
         <Buttons link={currency.links.homepage} />
       </main>
       <Footer />

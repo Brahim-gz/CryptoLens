@@ -1,16 +1,42 @@
 import ReactApexChart from "react-apexcharts";
 import Texture from "./texture";
 import { ApexOptions } from "apexcharts";
+import { MdErrorOutline } from "react-icons/md";
 
 function VolumesChart({
   total_volume,
   data,
   selectedCurrency,
+  status,
+  error,
 }: {
   total_volume: { [key: string]: number };
   data: [number, number][];
   selectedCurrency: string;
+  status: string;
+  error: Error;
 }) {
+  if (status === "loading")
+    return (
+      <div className="outline-1 outline-secondary flex items-center col-start-1 row-start-16 justify-center rounded-3xl col-span-7 row-span-7 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+        <Texture />
+        <span className="loading loading-ring text-primary w-15"></span>
+      </div>
+    );
+  if (status === "error") {
+    return (
+      <div className="outline-1 outline-secondary flex items-center col-start-1 row-start-16 justify-center rounded-3xl col-span-7 row-span-7 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+        <Texture />
+        <div
+          className="tooltip tooltip-bottom text-Black-50 dark:text-White"
+          data-tip={error.message}
+        >
+          <MdErrorOutline size={40} className="fill-Red" />
+        </div>
+      </div>
+    );
+  }
+
   const series = [
     {
       name: "Total Volumes Data",

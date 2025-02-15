@@ -3,6 +3,7 @@ import Texture from "./texture";
 import { ApexOptions } from "apexcharts";
 import { getOHCLData } from "../dataFetching";
 import { useQuery } from "@tanstack/react-query";
+import { MdErrorOutline } from "react-icons/md";
 
 function OHCLChart({
   id,
@@ -18,8 +19,26 @@ function OHCLChart({
     queryFn: getOHCLData,
   });
 
-  if (status === "loading") return <h1>Loading...</h1>;
-  if (status === "error") return <h1>{JSON.stringify(error)}</h1>;
+  if (status === "loading")
+    return (
+      <div className="outline-1 outline-secondary rounded-3xl col-start-10 row-start-7 col-span-15 row-span-12 backdrop-blur-24 relative overflow-hidden dark:outline-White flex items-center justify-center">
+        <Texture />
+        <span className="loading loading-ring text-primary w-20"></span>
+      </div>
+    );
+  if (status === "error") {
+    return (
+      <div className="outline-1 outline-secondary rounded-3xl col-start-10 row-start-7 col-span-15 row-span-12 backdrop-blur-24 relative overflow-hidden dark:outline-White flex items-center justify-center">
+        <Texture />
+        <div
+          className="tooltip tooltip-bottom text-Black-50 dark:text-White"
+          data-tip={(error as Error).message}
+        >
+          <MdErrorOutline size={60} className="fill-Red" />
+        </div>
+      </div>
+    );
+  }
 
   const series = [
     {
