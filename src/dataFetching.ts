@@ -24,6 +24,18 @@ export function getTopCryptocurrencies() {
     .then((data) => data);
 }
 
+export function getIdList() {
+  return fetch(
+    "https://api.coingecko.com/api/v3/coins/list?include_platform=false&status=active",
+    options
+  )
+    .then((res) => {
+      if (res.ok) return res.json();
+      else throw new Error("Oops! An unknown error occurred");
+    })
+    .then((data) => data);
+}
+
 export function getCryptocurrencyDetails({
   queryKey,
 }: {

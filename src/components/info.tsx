@@ -28,6 +28,7 @@ function Info({ c }: { c: InfoProps }) {
                   : "flex-wrap"
               }`}
             >
+              {c.categories.length === 0 && <br />}
               {(c.description.en
                 ? [...c.categories, ...c.categories]
                 : [...c.categories]

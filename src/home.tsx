@@ -16,12 +16,13 @@ function Home() {
     queryFn: getTopCryptocurrencies,
   });
 
-  if (status === "loading")
+  if (status === "loading") {
     return (
       <div className="flex justify-center items-center w-screen h-screen">
         <span className="loading loading-spinner text-primary w-15"></span>
       </div>
     );
+  }
   if (status === "error") {
     return <ErrorPage error={error as Error} />;
   }
