@@ -6,12 +6,14 @@ function Info({ c }: { c: InfoProps }) {
   const [extanded, setExtanded] = useState(false);
   return (
     <>
-      <div className="bg-White flex items-center col-start-1 row-start-1 justify-center w-38 rounded-br-3xl z-30 h-29 dark:bg-secondary">
+      <div className="bg-White flex items-center col-start-1 row-start-1 justify-center w-38 rounded-br-3xl z-30 h-29 dark:bg-secondary ">
         <img src={c.image.large} alt="icon" width={100} />
       </div>
       <div
-        className={`rounded-3xl bg-primary col-span-16 col-start-1 min-h-53 row-start-1 px-8 font-montserrat font-light text-sm text-Black-75 ${
-          extanded ? "h-fit pb-5" : "overflow-hidden row-span-6"
+        className={`rounded-3xl bg-primary  col-start-1 2xl:col-start-1 min-h-53  row-start-1 2xl:row-start-1 px-8 font-montserrat font-light text-sm text-Black-75  col-span-24 2xl:col-span-16 ${
+          extanded
+            ? "xl:h-fit  pb-5"
+            : "overflow-hidden  h-fit 2xl:h-auto 2xl:row-span-6  pb-5 2xl:pb-0"
         } z-5`}
       >
         <div className="bg-White h-29 w-45 absolute z-7 dark:bg-secondary"></div>
@@ -50,7 +52,7 @@ function Info({ c }: { c: InfoProps }) {
               </span>
             )}
             {c.hashing_algorithm && (
-              <span>
+              <span className={`${c.genesis_date && "hidden md:block"}`}>
                 hashing algorithm | <span>{c.hashing_algorithm}</span>
               </span>
             )}
@@ -59,18 +61,18 @@ function Info({ c }: { c: InfoProps }) {
         <p
           className={`text-Black px-4 font-medium leading-5 ${
             !extanded &&
-            "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]"
+            "2xl:overflow-hidden 2xl:[display:-webkit-box] 2xl:[-webkit-box-orient:vertical] 2xl:[-webkit-line-clamp:3]"
           }`}
         >
           {c.description.en.replace(/<[^>]*>/g, "")}
         </p>
       </div>
       <div
-        className="group rounded-b-3xl bg-primary row-span-10 col-start-5 row-start-6 py-5"
+        className="group rounded-b-3xl bg-primary row-span-10 col-start-5 row-start-6 py-5 2xl:flex justify-center  hidden"
         onClick={() => setExtanded(!extanded)}
       >
         <button
-          className={`rounded-3xl h-full bg-White w-6 mx-4.5 flex items-end group-hover:bg-primary dark:bg-secondary`}
+          className={`rounded-3xl h-full bg-White w-[1vw] flex items-end group-hover:bg-primary dark:bg-secondary`}
         >
           <MdOutlineArrowRightAlt
             size={40}

@@ -14,14 +14,14 @@ function MarketCapsChart({
 }) {
   if (status === "loading")
     return (
-      <div className="outline-1 outline-secondary rounded-3xl col-start-14 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+      <div className="outline-1 px-2 outline-secondary rounded-3xl col-start-1 md:col-start-13 lg:col-start-17 2xl:col-start-14 row-start-16 md:row-start-17 lg:row-start-19 flex items-center justify-center col-span-24 md:col-span-12 lg:col-span-8 2xl:col-span-6 row-span-2 md:row-span-3 lg:row-span-4 2xl:row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
         <Texture />
         <span className="loading loading-ring text-primary w-12"></span>
       </div>
     );
   if (status === "error") {
     return (
-      <div className="outline-1 outline-secondary rounded-3xl col-start-14 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+      <div className="outline-1 px-2 outline-secondary rounded-3xl col-start-1 md:col-start-13 lg:col-start-17 2xl:col-start-14 row-start-16 md:row-start-17 lg:row-start-19 flex items-center justify-center col-span-24 md:col-span-12 lg:col-span-8 2xl:col-span-6 row-span-2 md:row-span-3 lg:row-span-4 2xl:row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
         <Texture />
         <div
           className="tooltip tooltip-bottom text-Black-50 dark:text-White"
@@ -102,14 +102,14 @@ function MarketCapsChart({
     },
   };
   return (
-    <div className="outline-1 outline-secondary rounded-3xl col-start-14 row-start-19 flex items-center justify-center col-span-6 row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
+    <div className="outline-1 px-2 outline-secondary rounded-3xl col-start-1 md:col-start-13 lg:col-start-17 2xl:col-start-14 row-start-16 md:row-start-17 lg:row-start-19 flex items-center justify-center col-span-24 md:col-span-12 lg:col-span-8 2xl:col-span-6 row-span-2 md:row-span-3 lg:row-span-4 2xl:row-span-6 backdrop-blur-24 relative overflow-hidden dark:outline-White">
       <Texture />
       <ReactApexChart
         options={options}
         series={series}
         type="area"
         height={230}
-        width={420}
+        className="w-full flex"
       />
     </div>
   );

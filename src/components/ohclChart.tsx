@@ -21,14 +21,14 @@ function OHCLChart({
 
   if (status === "loading")
     return (
-      <div className="outline-1 outline-secondary rounded-3xl col-start-10 row-start-7 col-span-15 row-span-12 backdrop-blur-24 relative overflow-hidden dark:outline-White flex items-center justify-center">
+      <div className="outline-1 px-8 outline-secondary overflow-hidden rounded-3xl col-start-1 2xl:col-start-10 row-start-11 lg:row-start-10 2xl:row-start-7 2xl:col-span-15 col-span-24 row-span-3 md:row-span-6 lg:row-span-9 2xl:row-span-12 backdrop-blur-24 relative dark:outline-White flex items-center justify-center">
         <Texture />
         <span className="loading loading-ring text-primary w-20"></span>
       </div>
     );
   if (status === "error") {
     return (
-      <div className="outline-1 outline-secondary rounded-3xl col-start-10 row-start-7 col-span-15 row-span-12 backdrop-blur-24 relative overflow-hidden dark:outline-White flex items-center justify-center">
+      <div className="outline-1 px-8 outline-secondary overflow-hidden rounded-3xl col-start-1 2xl:col-start-10 row-start-11 lg:row-start-10 2xl:row-start-7 2xl:col-span-15 col-span-24 row-span-3 md:row-span-6 lg:row-span-9 2xl:row-span-12 backdrop-blur-24 relative dark:outline-White flex items-center justify-center">
         <Texture />
         <div
           className="tooltip tooltip-bottom text-Black-50 dark:text-White"
@@ -90,14 +90,14 @@ function OHCLChart({
   };
 
   return (
-    <div className="outline-1 outline-secondary rounded-3xl col-start-10 row-start-7 col-span-15 row-span-12 backdrop-blur-24 relative overflow-hidden dark:outline-White flex items-center justify-center">
+    <div className="outline-1 px-8 outline-secondary overflow-hidden rounded-3xl col-start-1 2xl:col-start-10 row-start-11 lg:row-start-10 2xl:row-start-7 2xl:col-span-15 col-span-24 row-span-3 md:row-span-6 lg:row-span-9 2xl:row-span-12 backdrop-blur-24 relative dark:outline-White flex items-center justify-center">
       <Texture />
       <ReactApexChart
         options={options}
         series={series}
         type="candlestick"
-        width={1000}
-        height={400}
+        height={410}
+        className="w-full flex"
       />
     </div>
   );

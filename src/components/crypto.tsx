@@ -16,20 +16,20 @@ function Crypto({ currency }: { currency: currency }) {
         <h2 className="font-nunito font-bold text-2xl">{currency.name}</h2>
       </div>
       <div className="flex items-center gap-5">
-        <h3 className="font-nunito font-bold text-xl">
+        <h3 className="font-nunito font-bold text-xl hidden md:block">
           $ {currency.current_price}
         </h3>
         <h4
-          className={
+          className={`font-nunito font-bold text-xl hidden sm:block ${
             currency.price_change_percentage_24h >= 0
-              ? "font-nunito font-bold text-xl text-Green"
-              : "font-nunito font-bold text-xl text-Red"
-          }
+              ? "text-Green"
+              : "text-Red"
+          }`}
         >
           {currency.price_change_percentage_24h.toFixed(2)}
         </h4>
         {currency.price_change_percentage_24h >= 0 ? (
-          <FaChevronUp className="fill-Green" size={20} />
+          <FaChevronUp className="fill-Green hidden sm:block" size={20} />
         ) : (
           <FaChevronDown className="fill-Red" size={20} />
         )}

@@ -10,9 +10,9 @@ import OHCLChart from "./components/ohclChart";
 import VolumesChart from "./components/volumesChart";
 import PricesChart from "./components/pricesChart";
 import MarketCapsChart from "./components/marketCapsChart";
-import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import ErrorPage from "./components/error";
+import DaysSelector from "./components/daysSelector";
 
 function Details() {
   const [duration, setDuration] = useState(1);
@@ -46,7 +46,7 @@ function Details() {
 
   return (
     <>
-      <main className="h-[91%] mx-16 my-8 grid grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary dark:text-White">
+      <main className="lx:h-400 2xl:h-[91%] mx-8 mt-4 md:mx-16 md:mt-8 grid grid-rows-[auto,repeat(23,1fr)] 2xl:grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary dark:text-White">
         <Info c={currency} />
         <CurrencyState
           c={currency.market_data}
@@ -67,42 +67,7 @@ function Details() {
           status={ChartsStatus}
           error={ChartsError as Error}
         />
-        <div className="rounded-3xl bg-primary col-start-8 row-start-16 col-span-2 row-span-3 my-4">
-          <select
-            value={duration}
-            onChange={(e) => setDuration(parseInt(e.target.value))}
-            className="select-xl pl-4 appearance-none w-full h-full border-none text-White outline-none cursor-pointer [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            <option
-              value="1"
-              className="bg-White text-secondary dark:bg-secondary dark:text-primary"
-            >
-              Day
-            </option>
-            <option
-              value="7"
-              className="bg-White text-secondary dark:bg-secondary dark:text-primary"
-            >
-              Week
-            </option>
-            <option
-              value="30"
-              className="bg-White text-secondary dark:bg-secondary dark:text-primary"
-            >
-              Month
-            </option>
-            <option
-              value="365"
-              className="bg-White text-secondary dark:bg-secondary dark:text-primary"
-            >
-              Year
-            </option>
-          </select>
-          <FaChevronDown
-            size={20}
-            className="relative left-24 bottom-10 pointer-events-none fill-White"
-          />
-        </div>
+        <DaysSelector duration={duration} setDuration={setDuration} />
         <PricesChart
           data={ChartsData?.prices}
           status={ChartsStatus}

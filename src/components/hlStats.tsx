@@ -10,7 +10,7 @@ function HLStats({
 }) {
   return (
     <>
-      <div className="outline-1 outline-secondary rounded-3xl col-start-1 row-start-7 col-span-4 row-span-9 backdrop-blur-24 relative overflow-hidden text-3xl flex flex-col items-center justify-around px-8 dark:outline-White">
+      <div className="outline-1 outline-secondary rounded-3xl col-start-1 row-start-5 lg:row-start-2 2xl:row-start-7 col-span-12 lg:col-span-6 2xl:col-span-4 row-span-5 min-h-60 lg:row-span-8 2xl:row-span-9 backdrop-blur-24 relative overflow-hidden text-3xl flex flex-col items-center justify-around px-8 dark:outline-White">
         <Texture />
         <span className="font-montserrat font-light text-2xl self-start">
           ATH
@@ -22,7 +22,7 @@ function HLStats({
           ATL
         </span>
       </div>
-      <div className="outline-1 outline-secondary rounded-3xl col-start-6 row-start-7 col-span-4 row-span-9 backdrop-blur-24 relative overflow-hidden text-3xl flex flex-col items-center justify-around px-8 dark:outline-White">
+      <div className="outline-1 outline-secondary rounded-3xl col-start-13 lg:col-start-7 2xl:col-start-6 row-start-5 lg:row-start-2 2xl:row-start-7 col-span-12 lg:col-span-6 2xl:col-span-4 row-span-5 min-h-60 lg:row-span-8 2xl:row-span-9 backdrop-blur-24 relative overflow-hidden text-3xl flex flex-col items-center justify-around px-8 dark:outline-White">
         <Texture />
         <span className="font-montserrat font-light text-2xl self-end">
           HIGH
