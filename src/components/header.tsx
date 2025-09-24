@@ -5,12 +5,12 @@ function Header() {
   return (
     <header className="w-full px-4 py-4 flex justify-between">
       <img
-        src="src\assets\icon1.svg"
+        src="/icon1.svg"
         alt="CryptoLens"
         className="dark:hidden"
       />
       <img
-        src="src\assets\icon2.svg"
+        src="/icon2.svg"
         alt="CryptoLens"
         className="invisible dark:visible"
       />
