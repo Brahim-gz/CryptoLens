@@ -117,10 +117,10 @@ function VolumesChart({
           className="w-full flex"
         />
       </div>
-      <div className="outline-1 py-2 2xl:py-0 outline-secondary rounded-3xl col-span-24 md:col-span-12 lg:col-span-8 2xl:col-span-7 row-span-1 lg:row-span-2 col-start-1 row-start-20 md:row-start-23 lg:row-start-23 backdrop-blur-24 dark:outline-White relative overflow-hidden text-2xl flex items-center justify-between px-5 lg:px-2 xl:px-5">
+      <div className="outline-1 py-2 2xl:py-0 outline-secondary rounded-3xl col-span-24 md:col-span-12 lg:col-span-8 2xl:col-span-7 row-span-1 lg:row-span-2 col-start-1 row-start-20 md:row-start-23 lg:row-start-23 backdrop-blur-24 dark:outline-White relative overflow-hidden text-xl sm:text-2xl flex items-center justify-between px-5 lg:px-2 xl:px-5">
         <Texture />
         {total_volume[selectedCurrency]}
-        <span className="font-montserrat font-light text-nowrap text-xl lg:text-lg xl:text-xl">
+        <span className="font-montserrat font-light text-nowrap text-lg sm:text-xl lg:text-lg xl:text-xl">
           Total volume
         </span>
       </div>

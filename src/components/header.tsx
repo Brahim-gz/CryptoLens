@@ -12,7 +12,7 @@ function Header() {
       <img
         src="/icon2.svg"
         alt="CryptoLens"
-        className="invisible dark:visible"
+        className="hidden dark:inline"
       />
       <div className="flex justify-end gap-8">
         <SearchBar />

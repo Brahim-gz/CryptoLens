@@ -90,7 +90,7 @@ function OHCLChart({
   };
 
   return (
-    <div className="outline-1 px-8 outline-secondary overflow-hidden rounded-3xl col-start-1 2xl:col-start-10 row-start-11 lg:row-start-10 2xl:row-start-7 2xl:col-span-15 col-span-24 row-span-3 md:row-span-6 lg:row-span-9 2xl:row-span-12 backdrop-blur-24 relative dark:outline-White flex items-center justify-center">
+    <div className="outline-1 px-8 pt-2 sm:pt:0 outline-secondary overflow-hidden rounded-3xl col-start-1 2xl:col-start-10 row-start-11 lg:row-start-10 2xl:row-start-7 2xl:col-span-15 col-span-24 row-span-3 md:row-span-6 lg:row-span-9 2xl:row-span-12 backdrop-blur-24 relative dark:outline-White flex items-center justify-center">
       <Texture />
       <ReactApexChart
         options={options}

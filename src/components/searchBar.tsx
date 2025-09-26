@@ -62,7 +62,7 @@ const SearchBar = () => {
   return (
     <label
       ref={searchBarRef}
-      className={`input input-bordered flex items-center gap-2 bg-Black-10 dark:bg-White has-focus:bg-White rounded-2xl font-nunito has-focus:border-2 has-focus:border-secondary`}
+      className={`input input-bordered hidden sm:flex items-center gap-2 bg-Black-10 dark:bg-White has-focus:bg-White rounded-2xl font-nunito has-focus:border-2 has-focus:border-secondary`}
     >
       <input
         type="text"

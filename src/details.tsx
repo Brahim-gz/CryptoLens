@@ -46,7 +46,7 @@ function Details() {
 
   return (
     <>
-      <main className="lx:h-400 2xl:h-[91%] mx-8 mt-4 md:mx-16 md:mt-8 grid grid-rows-[auto,repeat(23,1fr)] 2xl:grid-rows-24 grid-cols-24 gap-4 font-nunito font-bold text-secondary dark:text-White">
+      <main className="lx:h-400 2xl:h-[91%] mx-2 sm:mx-8 mt-4 md:mx-16 md:mt-8 grid grid-rows-[auto,repeat(23,1fr)] 2xl:grid-rows-24 grid-cols-24 gap-2 sm:gap-4 font-nunito font-bold text-secondary dark:text-White">
         <Info c={currency} />
         <CurrencyState
           c={currency.market_data}
@@ -80,7 +80,9 @@ function Details() {
         />
         <Buttons link={currency.links.homepage} />
       </main>
+      <div className="relative 2xl:fixed bottom-0 w-full">
       <Footer />
+      </div>
     </>
   );
 }

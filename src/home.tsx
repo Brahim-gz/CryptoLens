@@ -30,15 +30,17 @@ function Home() {
   return (
     <>
       <Header />
-      <h1 className="mx-[16%] mt-8 mb-8 bg-gradient-to-r from-[#191533] to-[#9F91FA] bg-clip-text text-transparent font-nunito font-bold text-[41px] dark:text-primary">
+      <h1 className="mx-[16%] mt-8 mb-8 bg-gradient-to-r from-[#191533] to-[#9F91FA] bg-clip-text text-transparent font-nunito font-bold text-[30px] sm:text-[41px] dark:text-primary">
         Top cryptocurrencies
       </h1>
-      <main className="h-[74%] mx-[16%] flex flex-col gap-2 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <main className="h-fit lg:h-[68%] mx-[16%] flex flex-col gap-2 lg:overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cryptos.map((c: currency) => {
           return <Crypto currency={c} key={c.id} />;
         })}
       </main>
+      <div className="relative lg:fixed bottom-0 w-full">
       <Footer />
+      </div>
     </>
   );
 }

@@ -10,7 +10,7 @@ function Info({ c }: { c: InfoProps }) {
         <img src={c.image.large} alt="icon" width={100} />
       </div>
       <div
-        className={`rounded-3xl bg-primary  col-start-1 2xl:col-start-1 min-h-53  row-start-1 2xl:row-start-1 px-8 font-montserrat font-light text-sm text-Black-75  col-span-24 2xl:col-span-16 ${
+        className={`rounded-3xl bg-primary  col-start-1 2xl:col-start-1 min-h-53  row-start-1 2xl:row-start-1 px-4 sm:px-8 font-montserrat font-light text-sm text-Black-75  col-span-24 2xl:col-span-16 ${
           extanded
             ? "xl:h-fit  pb-5"
             : "overflow-hidden  h-fit 2xl:h-auto 2xl:row-span-6  pb-5 2xl:pb-0"
@@ -19,8 +19,11 @@ function Info({ c }: { c: InfoProps }) {
         <div className="bg-White h-29 w-45 absolute z-7 dark:bg-secondary"></div>
         <div className="bg-primary absolute w-50 mt-20 z-8 h-10"></div>
         <div className="bg-primary ml-28 rounded-3xl pt-4 px-8 z-9  leading-9 relative">
-          <h1 className="font-nunito font-bold text-White text-4xl mb-1">
+          <h1 className="font-nunito font-bold text-White text-4xl mb-1 hidden sm:block">
             {c.name}({c.symbol.toUpperCase()})
+          </h1>
+          <h1 className="font-nunito font-bold text-White text-4xl mb-1 sm:hidden">
+            {c.symbol.toUpperCase()}
           </h1>
           <div className="overflow-hidden flex">
             <div
